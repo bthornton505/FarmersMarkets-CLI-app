@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/farmers_markets'
 
-puts "What's up bro?"
+FarmersMarkets::CLI.new.call 
