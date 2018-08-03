@@ -9,13 +9,14 @@ class FarmersMarkets::CLI
   
   def list_markets # get markets 
     puts "Top 11 Denver Farmers Markets:"
-    puts "======================================"
-    puts <<-DOC
-      1. Cherry Creek Fresh Market
-      2. South Pearl Street Farmers Market
-      3. City Park Esplanade Fresh Market
-    DOC
-    puts "======================================"
+    # puts "======================================"
+    # puts <<-DOC
+    #   1. Cherry Creek Fresh Market
+    #   2. South Pearl Street Farmers Market
+    #   3. City Park Esplanade Fresh Market
+    # DOC
+    # puts "======================================"
+    @markets = FarmersMarkets::Market.all_markets
   end 
   
   def market_menu 
