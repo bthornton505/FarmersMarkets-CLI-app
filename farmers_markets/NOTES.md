@@ -25,9 +25,9 @@ The user will run the code with farmers_markets and be provided a list of market
     
 What makes up a market?
 
-  - A market has a name 
-  - A market has a location
-  - A market has a time being held 
-  - A market has a description
-  - A market has a potential websit 
+  - A market has a name (market.name)
+  - A market has a location (market.location)
+  - A market has a time being held (market.time)
+  - A market has a description (market.description)
+  - A market has a potential website (market.url)
 
