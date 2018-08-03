@@ -23,5 +23,11 @@ The user will run the code with farmers_markets and be provided a list of market
 - Or they can exit the application which will tell the user:
     - "Enjoy the farmers market!" or something along these lines... 
     
+What makes up a market?
 
+  - A market has a name 
+  - A market has a location
+  - A market has a time being held 
+  - A market has a description
+  - A market has a potential websit 
 
