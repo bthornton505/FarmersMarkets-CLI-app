@@ -9,14 +9,12 @@ class FarmersMarkets::CLI
   
   def list_markets # get markets 
     puts "Top 11 Denver Farmers Markets:"
-    # puts "======================================"
-    # puts <<-DOC
-    #   1. Cherry Creek Fresh Market
-    #   2. South Pearl Street Farmers Market
-    #   3. City Park Esplanade Fresh Market
-    # DOC
-    # puts "======================================"
     @markets = FarmersMarkets::Market.all_markets
+    puts "======================================"
+    @markets.each.with_index(1) do |market, i|
+      puts "#{i}. #{market.name}"
+    end 
+    puts "======================================"
   end 
   
   def market_menu 
@@ -25,27 +23,23 @@ class FarmersMarkets::CLI
     while input != "exit"
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     input = gets.strip 
-    puts "======================================"
-      case input 
-      when "1"
-        puts "More info on Cherry Creek Fresh Market"
+    
+    
+      if input.to_i > 0 
+        puts ""
+        puts @markets[input.to_i-1]
         puts "======================================"
-      when "2"
-        puts "More info on South Pearl Street Farmers Market"
-        puts "======================================"
-      when "3"
-        puts "More info on City Park Esplanade Fresh Market"
-        puts "======================================"
-      when "list"
+      elsif input == "list"
         list_markets
-      # else 
-      #   puts "Not really sure what you want..."
-      #   puts "======================================"
+      else 
+        puts "Not really sure what you want..." unless "exit"
       end 
+      
     end
   end 
   
   def goodbye 
+    puts "======================================"
     puts "Thanks for stopping by! Enjoy all the wonderful Farmers Markets in Denver!"
   end 
   
