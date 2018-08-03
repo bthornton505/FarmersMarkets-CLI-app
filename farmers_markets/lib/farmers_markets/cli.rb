@@ -4,6 +4,7 @@ class FarmersMarkets::CLI
   def call 
     list_markets
     market_menu 
+    goodbye 
   end 
   
   def list_markets # get markets 
@@ -36,8 +37,15 @@ class FarmersMarkets::CLI
         puts "======================================"
       when "list"
         list_markets
+      # else 
+      #   puts "Not really sure what you want..."
+      #   puts "======================================"
       end 
     end
+  end 
+  
+  def goodbye 
+    puts "Thanks for stopping by! Enjoy all the wonderful Farmers Markets in Denver!"
   end 
   
 end 
