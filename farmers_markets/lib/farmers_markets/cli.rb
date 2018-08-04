@@ -24,7 +24,6 @@ class FarmersMarkets::CLI
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     input = gets.strip 
     
-    
       if input.to_i > 0 
         puts ""
         puts @markets[input.to_i-1]
@@ -34,7 +33,6 @@ class FarmersMarkets::CLI
       else 
         puts "Not really sure what you want..." unless "exit"
       end 
-      
     end
   end 
   
