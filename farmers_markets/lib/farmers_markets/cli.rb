@@ -1,6 +1,6 @@
 # Our CLI Controller (responsible for business logic or user interactions)
 class FarmersMarkets::CLI 
-  attr_accessor :name 
+  attr_accessor :name
   
   def call 
     list_markets
@@ -23,11 +23,15 @@ class FarmersMarkets::CLI
     input = nil 
     while input != "exit"
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
-    input = gets.strip 
+    input = gets.strip.downcase 
     
       if input.to_i > 0 
-        puts ""
-        puts @markets[input.to_i-1]
+        the_market = @markets[input.to_i-1]
+        puts "#{the_market.name}"  
+        puts "--------------------------------------"
+        puts "#{the_market.time}" 
+        puts "Description: #{the_market.description}" 
+        puts "Website: #{the_market.url}" 
         puts "======================================"
       elsif input == "list"
         list_markets
