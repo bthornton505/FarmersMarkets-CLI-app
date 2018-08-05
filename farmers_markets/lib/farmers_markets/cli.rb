@@ -12,14 +12,11 @@ class FarmersMarkets::CLI
     puts "Top 11 Denver Farmers Markets:"
     @markets = FarmersMarkets::Market.all_markets
     puts "======================================"
-    @markets.each.with_index(1) do |market, i|
-      puts "#{i}. #{market.name}"
-    end 
+    @markets.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
     puts "======================================"
   end 
   
   def market_menu 
-    
     input = nil 
     while input != "exit"
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
@@ -27,16 +24,17 @@ class FarmersMarkets::CLI
     
       if input.to_i > 0 
         the_market = @markets[input.to_i-1]
-        puts "#{the_market.name}"  
+        puts ""
+        puts "#{the_market.name}".colorize(:green)
         puts "--------------------------------------"
-        puts "#{the_market.time}" 
-        puts "Description: #{the_market.description}" 
-        puts "Website: #{the_market.url}" 
+        puts "#{the_market.time}".colorize(:green)
+        puts "Description:".colorize(:green) + " #{the_market.description}" 
+        puts "Website:".colorize(:green) + " #{the_market.url}" 
         puts "======================================"
       elsif input == "list"
         list_markets
       else 
-        puts "Not really sure what you want..." unless "exit"
+        puts "Not really sure what you want..." #unless "exit"
       end 
     end
   end 
