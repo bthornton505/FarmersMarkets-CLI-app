@@ -16,10 +16,10 @@ class FarmersMarkets::Market
     
     # doc.css("div.ordered-list__content").each do |market|
       market = self.new 
-      market.name = doc.css("h3#text-block_9-0").first.text
-      market.time = doc.css("div#inline-chop_2-0 p")[1].text
-      market.description = doc.css("div#inline-chop_2-0 p").first.text
-      market.url = doc.css("div#inline-chop_2-0 p a").first.attr('href')
+      market.name = doc.css("h3#text-block_9-0").first.text.strip 
+      market.time = doc.css("div#inline-chop_2-0 p")[1].text.strip 
+      market.description = doc.css("div#inline-chop_2-0 p").first.text.strip 
+      market.url = doc.css("div#inline-chop_2-0 p a").first.attr('href').strip 
       # binding.pry
       market
     # end
