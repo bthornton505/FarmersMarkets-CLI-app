@@ -3,7 +3,7 @@ class FarmersMarkets::Market
   
   def self.all_markets 
     
-    FarmersMarkets::MarketScraper.new 
+    FarmersMarkets::MarketScraper.new.markets  
     
     # market_1 = self.new 
     # market_1.name = "Cherry Creek Fresh Market"
