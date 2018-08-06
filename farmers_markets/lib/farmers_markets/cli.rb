@@ -12,6 +12,7 @@ class FarmersMarkets::CLI
     puts "Top 11 Denver Farmers Markets:"
     @markets = FarmersMarkets::Market.all_markets
     puts "======================================"
+    # binding.pry 
     @markets.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
     puts "======================================"
   end 
