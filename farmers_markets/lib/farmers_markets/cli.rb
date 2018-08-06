@@ -32,9 +32,12 @@ class FarmersMarkets::CLI
         puts "Website:".colorize(:green) + " #{the_market.url}" 
         puts "======================================"
       elsif input == "list"
+        puts ""
         list_markets
       else 
-        puts "Not really sure what you want..." #unless "exit"
+        puts ""
+        puts "Not really sure what you want..." unless input == "exit"
+        puts "======================================"
       end 
     end
   end 
