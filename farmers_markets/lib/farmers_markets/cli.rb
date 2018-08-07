@@ -30,8 +30,8 @@ class FarmersMarkets::CLI
         puts "--------------------------------------"
         puts "#{the_market.time}".colorize(:green)
         puts "Description:".colorize(:green) + " #{the_market.description}" 
-        puts "Website:".colorize(:green) + " #{the_market.url}" 
-        puts "======================================"
+        puts "Website:".colorize(:green) + " #{the_market.url}" #if input == the_market.url (this should help with 
+        puts "======================================"           #markets that dont have websites..)
       elsif input == "list"
         puts ""
         list_markets
