@@ -1,5 +1,12 @@
 class FarmersMarkets::Market 
-  attr_accessor :name, :time, :description, :url, :markets  
+  attr_accessor :name, :time, :description, :url  
+  
+  def initialize(name = nil, time = nil, description = nil, url = nil) #not sure if this is gonna help... so lost 
+    @name = name 
+    @time = time 
+    @description = description 
+    @url = url 
+  end 
   
   def self.all_markets 
     self.scrape_markets
@@ -14,15 +21,30 @@ class FarmersMarkets::Market
   def self.scrape_tripsavvy
     doc = Nokogiri::HTML(open("https://www.tripsavvy.com/farmers-markets-in-denver-1062032"))
 
-    # doc.css("div#ordered-list_1-0").each do |markets|
-        # binding.pry
-        market = self.new 
-        market.name = doc.css("h3#text-block_9-0").first.text.strip 
-        market.time = doc.css("div#inline-chop_2-0 p")[1].text.strip 
-        market.description = doc.css("div#inline-chop_2-0 p").first.text.strip 
-        market.url = doc.css("div#inline-chop_2-0 p a").first.attr('href').strip 
-        market
+    # doc.css("div#ordered-list__content").each do |market|
+      # markets.each do |market| 
+        market_1 = self.new 
+        market_1.name = doc.css("h3#text-block_9-0").first.text.strip 
+        market_1.time = doc.css("div#inline-chop_2-0 p")[1].text.strip 
+        market_1.description = doc.css("div#inline-chop_2-0 p").first.text.strip 
+        market_1.url = doc.css("div#inline-chop_2-0 p a").first.attr('href').strip 
+        market_1
+        
+        market_2 = self.new 
+        market_2.name = doc.css("h3#text-block_9-0")[1].text.strip 
+        market_2.time = doc.css("div#inline-chop_2-0 p")[3].text.strip 
+        market_2.description = doc.css("div#inline-chop_2-0 p")[2].text.strip 
+        market_2.url = doc.css("div#inline-chop_2-0 p a")[1].attr('href').strip 
+        market_2
+        
+        [market_1, market_2]
+        
+      # end 
     # end
   end 
+  
+  #doc.css("h3 span.link__wrapper").text (This gets the highlands ranch market. It has a link wrapped around it.)
+  
+  
   
 end 
