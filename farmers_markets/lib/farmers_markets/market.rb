@@ -1,13 +1,6 @@
 class FarmersMarkets::Market 
   attr_accessor :name, :time, :description, :url  
-  
-  def initialize(name = nil, time = nil, description = nil, url = nil) #not sure if this is gonna help... so lost 
-    @name = name 
-    @time = time 
-    @description = description 
-    @url = url 
-  end 
-  
+
   def self.all_markets 
     self.scrape_markets
   end 
