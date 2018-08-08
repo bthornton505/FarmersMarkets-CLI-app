@@ -1,6 +1,5 @@
 # Our CLI Controller (responsible for business logic or user interactions)
 class FarmersMarkets::CLI 
-  attr_accessor :name
   
   def call 
     list_markets
