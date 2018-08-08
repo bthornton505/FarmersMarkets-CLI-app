@@ -1,12 +1,11 @@
 class FarmersMarkets::Market 
-  attr_accessor :name, :time, :description, :url  
+  attr_accessor :name, :time, :description  
   @@all = []
   
   def intialize
     @name = name 
     @time = time 
     @description = description
-    @url = url 
   end 
   
   def self.all
