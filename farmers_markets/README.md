@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/farmers_markets`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Farmers Markets CLI gem application! This application can be used to find the top 11 Denver, CO farmers markets. Simply run the program and you will be given the list of markets. From there please pick one of the following markets and you will be given details such as the name, when it's being held, and the description. Hope you enjoy this application!
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this application you want to run it first. From there you will be given the list of markets. Please pick one of the following markets and you will be given details such as the name, when it's being held, and the description. After that you will be asked to either select another market if you remember the number, you could type list to be redirected to the main menu or you can exit the application which will send you off with a message to enjoy the farmers markets. 
 
 ## Development
 
