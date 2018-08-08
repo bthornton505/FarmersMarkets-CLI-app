@@ -22,8 +22,8 @@ class FarmersMarkets::CLI
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     input = gets.strip.downcase 
     
-      if input.to_i > 0 
-        the_market = @markets[input.to_i-1]
+      if input.to_i-1 <= FarmersMarkets::Market.all.size 
+        the_market = FarmersMarkets::Market.all[input.to_i-1]
         puts ""
         puts "#{the_market.name}".colorize(:green)
         puts "--------------------------------------"
