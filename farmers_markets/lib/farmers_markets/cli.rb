@@ -11,7 +11,7 @@ class FarmersMarkets::CLI
   end 
   
   def list_markets 
-    FarmersMarkets::Market.all.each_with_index {|market, i| puts "#{i+1}. #{market.name}".colorize(:green)}
+    FarmersMarkets::Market.all.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
     puts "======================================"
     # binding.pry
   end 
@@ -24,16 +24,20 @@ class FarmersMarkets::CLI
     
       if input.to_i-1 <= FarmersMarkets::Market.all.size 
         the_market = FarmersMarkets::Market.all[input.to_i-1]
+        
         puts ""
-        puts "#{the_market.name}".colorize(:green)
+        puts the_market.name.colorize(:green)
         puts "--------------------------------------"
-        puts "#{the_market.time}".colorize(:green)
+        puts the_market.time.colorize(:green)
         puts "Description:".colorize(:green) + " #{the_market.description}" 
-        puts "Website:".colorize(:green) + " #{the_market.url}" #if input == the_market.url (this should help with 
-        puts "======================================"           #markets that dont have websites..)
-      elsif input == "list"
-        puts ""
-        list_markets
+        # puts "Website:".colorize(:green) + " #{the_market.url}"
+        puts "======================================"           
+        
+        if input == "list"
+          puts ""
+          list_markets
+        end 
+        
       else 
         puts ""
         puts "Not really sure what you want..." unless input == "exit"
