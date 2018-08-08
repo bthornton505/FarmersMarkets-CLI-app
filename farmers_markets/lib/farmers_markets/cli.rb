@@ -2,22 +2,22 @@
 class FarmersMarkets::CLI 
   
   def call 
+    puts "Top 11 Denver Farmers Markets:"
+    FarmersMarkets::Scraper.new.scrape_tripsavvy
+    puts "======================================"
     list_markets
     market_menu 
     goodbye 
   end 
   
-  def list_markets # get markets 
-    puts "Top 11 Denver Farmers Markets:"
-    FarmersMarkets::Scraper.new.scrape_tripsavvy
+  def list_markets 
+    FarmersMarkets::Market.all.each_with_index {|market, i| puts "#{i+1}. #{market.name}".colorize(:green)}
     puts "======================================"
-    # binding.pry 
-    FarmersMarkets::Story.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
-    puts "======================================"
+    # binding.pry
   end 
   
   def market_menu 
-    input = nil 
+    input = "" 
     while input != "exit"
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     input = gets.strip.downcase 
