@@ -11,7 +11,6 @@ class FarmersMarkets::CLI
   end 
   
   def list_markets 
-    # binding.pry
     FarmersMarkets::Market.all.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
     puts "======================================"
   end 
