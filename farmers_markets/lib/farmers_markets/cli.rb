@@ -31,7 +31,7 @@ class FarmersMarkets::CLI
           puts the_market.name.colorize(:green)
           puts "--------------------------------------"
           puts the_market.time.colorize(:green)
-          puts "Description:".colorize(:green) + " #{the_market.description}" 
+          puts "Description:".colorize(:green) + "#{the_market.description}"
           # puts "Website:".colorize(:green) + " #{the_market.url}"
           puts "======================================"   
         else 
