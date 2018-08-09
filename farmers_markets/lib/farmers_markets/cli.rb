@@ -43,6 +43,7 @@ class FarmersMarkets::CLI
         puts "Not really sure what you want..." unless input == "exit"
         puts "======================================"
       end 
+      # input = gets.strip 
     end
   end 
   
