@@ -17,7 +17,6 @@ class FarmersMarkets::CLI
   
   def market_menu 
     input = "" 
-    
     while input != "exit" 
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     
@@ -51,5 +50,9 @@ class FarmersMarkets::CLI
     puts "======================================"
     puts "Thanks for stopping by! Enjoy all the wonderful Farmers Markets in Denver!"
   end 
+  
+  # think about implementing a more efficient way to validate the user input. 
+  # possibly even a class that could be responsible for this task 
+  # you could then implement that class into your cli 
   
 end 
