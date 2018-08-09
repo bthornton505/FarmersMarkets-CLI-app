@@ -2,7 +2,7 @@ class FarmersMarkets::Market
   attr_accessor :name, :time, :description  
   @@all = []
   
-  def intialize
+  def initialize
     @name = name 
     @time = time 
     @description = description
