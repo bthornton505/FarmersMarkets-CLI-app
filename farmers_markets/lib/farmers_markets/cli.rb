@@ -17,8 +17,10 @@ class FarmersMarkets::CLI
   
   def market_menu 
     input = "" 
+    
     while input != "exit" 
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
+    
     input = gets.strip.downcase 
     
       if input.to_i-1 <= FarmersMarkets::Market.all.size && input != "exit"
