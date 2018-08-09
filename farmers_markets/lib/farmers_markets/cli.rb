@@ -11,27 +11,29 @@ class FarmersMarkets::CLI
   end 
   
   def list_markets 
+    # binding.pry
     FarmersMarkets::Market.all.each.with_index(1) {|market, i| puts "#{i}. #{market.name}".colorize(:green)}
     puts "======================================"
-    # binding.pry
   end 
   
   def market_menu 
     input = "" 
-    while input != "exit"
+    while input != "exit" 
     puts "To learn more about a market, enter the number. To see the list again type list. If you wish to exit, type exit."
     input = gets.strip.downcase 
     
-      if input.to_i-1 <= FarmersMarkets::Market.all.size 
+      if input.to_i-1 <= FarmersMarkets::Market.all.size && input != "exit"
         the_market = FarmersMarkets::Market.all[input.to_i-1]
         
-        puts ""
-        puts the_market.name.colorize(:green)
-        puts "--------------------------------------"
-        puts the_market.time.colorize(:green)
-        puts "Description:".colorize(:green) + " #{the_market.description}" 
-        # puts "Website:".colorize(:green) + " #{the_market.url}"
-        puts "======================================"           
+        if input != "list"
+          puts ""
+          puts the_market.name.colorize(:green)
+          puts "--------------------------------------"
+          puts the_market.time.colorize(:green)
+          puts "Description:".colorize(:green) + " #{the_market.description}" 
+          # puts "Website:".colorize(:green) + " #{the_market.url}"
+          puts "======================================"    
+        end 
         
         if input == "list"
           puts ""
@@ -43,7 +45,6 @@ class FarmersMarkets::CLI
         puts "Not really sure what you want..." unless input == "exit"
         puts "======================================"
       end 
-      # input = gets.strip 
     end
   end 
   
