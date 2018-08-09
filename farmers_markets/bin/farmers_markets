@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/farmers_markets'
+require "bundler/setup"
+require "farmers_markets"
 
 FarmersMarkets::CLI.new.call 
