@@ -22,21 +22,20 @@ class FarmersMarkets::CLI
     
     input = gets.strip.downcase 
     
-      if input.to_i-1 <= FarmersMarkets::Market.all.size && input != "exit"
+      if input.to_i > 0 && input.to_i-1 < FarmersMarkets::Market.all.size 
         the_market = FarmersMarkets::Market.all[input.to_i-1]
         
-        if input != "list"
-          puts ""
-          puts the_market.name.colorize(:green)
-          puts "--------------------------------------"
-          puts the_market.time.colorize(:green)
-          puts "Description:".colorize(:green) + "#{the_market.description}"
-          # puts "Website:".colorize(:green) + " #{the_market.url}"
-          puts "======================================"   
-        else 
-          puts ""
-          list_markets
-        end 
+        puts ""
+        puts the_market.name.colorize(:green)
+        puts "--------------------------------------"
+        puts the_market.time.colorize(:green)
+        puts "Description:".colorize(:green) + "#{the_market.description}"
+        # puts "Website:".colorize(:green) + " #{the_market.url}"
+        puts "======================================"   
+     
+      elsif input == "list" 
+        puts ""
+        list_markets
         
       else 
         puts ""
