@@ -8,9 +8,11 @@ class FarmersMarkets::Scraper
       market.name = markets.search("h3").text.strip  
       market.time = markets.search("div#inline-chop_2-0 p")[1].text 
       market.description = markets.search("div#inline-chop_2-0 p").first.text.strip 
-      # market.url = markets.search("div#inline-chop_2-0 p a").attr('href').text
       
       market.save
     end
   end
 end 
+
+
+# market.url = markets.search("div#inline-chop_2-0 p a").attr('href').text
